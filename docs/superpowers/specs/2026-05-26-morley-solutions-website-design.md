@@ -46,7 +46,7 @@ morley-solutions/                       (GitHub repo, public)
 
 Top-to-bottom, all in `index.html`:
 
-1. **Header** — left-aligned logo (SVG inlined or `<img>`); ~32px top/bottom padding; thin bottom divider.
+1. **Header** — left-aligned logo (`<img src="assets/logo.svg" alt="Morley Solutions LLC">`); ~32px top/bottom padding; thin bottom divider.
 2. **Hero** — centered content column, max-width 720px:
    - Eyebrow label: "Morley Solutions LLC" in deep blue, uppercase, letter-spaced.
    - H1 tagline: **"Automating the work that gets in your way."**
