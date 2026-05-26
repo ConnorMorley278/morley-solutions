@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" width="2048" height="2048">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0,127)">
+    <g transform="translate(10,20)">
+      <path d="M0 55 L22 5 L44 55 L66 5 L88 55" fill="none" stroke="#1e3a8a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <text x="115" y="40" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="38" fill="#111">Morley</text>
+    <text x="115" y="80" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="28" fill="url(#grad)" letter-spacing="3">SOLUTIONS</text>
+  </g>
+</svg>
