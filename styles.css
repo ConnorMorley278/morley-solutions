@@ -62,17 +62,17 @@ a:focus-visible {
 
 .hero__eyebrow {
   margin: 0 0 16px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-accent);
 }
 
 .hero__title {
   margin: 0 0 28px;
-  font-size: 44px;
-  line-height: 1.15;
+  font-size: 38px;
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.5px;
   color: var(--color-heading);
@@ -97,6 +97,21 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
+.site-footer__line {
+  margin: 0 0 6px;
+}
+
+.site-footer__location {
+  margin: 0 0 6px;
+}
+
+.site-footer__fine {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-muted);
+  opacity: 0.85;
+}
+
 .site-footer__sep {
   margin: 0 8px;
   color: var(--color-rule);
@@ -117,7 +132,7 @@ a:focus-visible {
   }
 
   .hero__title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .hero__body {
