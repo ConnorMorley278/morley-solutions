@@ -347,3 +347,42 @@ body.nav-open .nav-drawer {
     padding: 0 20px 64px;
   }
 }
+
+/* ── Filter tabs ────────────────────────────────────── */
+
+.filter-tabs {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 24px;
+  display: flex;
+  gap: 8px;
+}
+
+.filter-tab {
+  background: none;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.filter-tab:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.filter-tab.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .filter-tabs {
+    padding: 0 20px 20px;
+  }
+}
