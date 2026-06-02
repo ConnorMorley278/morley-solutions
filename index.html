@@ -10,7 +10,20 @@
 </head>
 <body>
 
+  <!-- Nav overlay (closes drawer on outside click) -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- Nav drawer -->
+  <nav class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <p class="nav-drawer__title">Menu</p>
+    <ul class="nav-drawer__links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+    </ul>
+  </nav>
+
   <header class="site-header">
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navDrawer">&#9776;</button>
     <img class="site-header__logo" src="assets/logo.svg" alt="Morley Solutions LLC">
   </header>
 
@@ -42,5 +55,32 @@
     <p class="site-footer__fine">&copy; 2026 Morley Solutions LLC</p>
   </footer>
 
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var overlay = document.getElementById('navOverlay');
+      var drawer = document.getElementById('navDrawer');
+
+      function open() {
+        document.body.classList.add('nav-open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+
+      function close() {
+        document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+
+      toggle.addEventListener('click', function () {
+        document.body.classList.contains('nav-open') ? close() : open();
+      });
+
+      overlay.addEventListener('click', close);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
