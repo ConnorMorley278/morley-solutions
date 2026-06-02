@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products — Morley Solutions LLC</title>
+  <meta name="description" content="Browse Morley Solutions LLC products and place a secure order.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Nav overlay -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- Nav drawer -->
+  <nav class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <p class="nav-drawer__title">Menu</p>
+    <ul class="nav-drawer__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+    </ul>
+  </nav>
+
+  <header class="site-header">
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navDrawer">&#9776;</button>
+    <img class="site-header__logo" src="assets/logo.svg" alt="Morley Solutions LLC">
+  </header>
+
+  <div class="products-header">
+    <h1>Products</h1>
+    <p class="products-header__subtitle">Browse our catalogue and place an order directly through our secure checkout.</p>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- PLACEHOLDER CARD — replace with real product when ready -->
+    <div class="product-card">
+      <h2 class="product-card__name">Product Name</h2>
+      <p class="product-card__desc">Product description goes here. Update this card with your real product details and Stripe Payment Link.</p>
+      <p class="product-card__price">$0.00 per unit</p>
+      <a class="btn-order btn-order--disabled" href="#" aria-disabled="true">Order Now</a>
+    </div>
+    <!-- END PLACEHOLDER -->
+
+    <!--
+      TO ADD A REAL PRODUCT — copy this block and fill in your details:
+
+      <div class="product-card">
+        <h2 class="product-card__name">Your Product Name</h2>
+        <p class="product-card__desc">2-3 sentence description of the product.</p>
+        <p class="product-card__price">$XX.XX per unit</p>
+        <a class="btn-order" href="https://buy.stripe.com/YOUR_LINK_HERE" target="_blank" rel="noopener">Order Now</a>
+      </div>
+    -->
+
+  </div>
+
+  <footer class="site-footer">
+    <p class="site-footer__line">
+      Primary contact: Connor Morley
+      <span class="site-footer__sep">|</span>
+      <a href="mailto:cmorleytechservices@gmail.com">cmorleytechservices@gmail.com</a>
+    </p>
+    <p class="site-footer__location">Kentucky, USA</p>
+    <p class="site-footer__fine">&copy; 2026 Morley Solutions LLC</p>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var overlay = document.getElementById('navOverlay');
+      var drawer = document.getElementById('navDrawer');
+
+      function open() {
+        document.body.classList.add('nav-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close navigation');
+      }
+
+      function close() {
+        document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+      }
+
+      toggle.addEventListener('click', function () {
+        document.body.classList.contains('nav-open') ? close() : open();
+      });
+
+      overlay.addEventListener('click', close);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
+</body>
+</html>
