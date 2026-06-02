@@ -55,9 +55,25 @@ Confirmed not required for a static brochure site with no forms / analytics / e-
 
 - Design spec: `docs/superpowers/specs/2026-05-26-morley-solutions-website-design.md`
 - Implementation plan: `docs/superpowers/plans/2026-05-26-morley-solutions-website.md`
+- Products page spec: `docs/superpowers/specs/2026-06-02-products-page-design.md`
+- Products page plan: `docs/superpowers/plans/2026-06-02-products-page-nav-drawer.md`
+
+## Change log
+
+- **2026-06-02:** Added hamburger nav drawer (all pages) and Products page with placeholder card. Stripe Payment Link instructions in `products.html` comments. Commit `5c6f419`. Live at `/products.html`.
+- **2026-05-27:** Added a third hero paragraph inviting prospective clients to reach out. Commit `f5495c3`. Live.
+
+## Adding products (when ready)
+
+1. In Stripe Dashboard → Payment Links → + New. Add product, enable quantity adjustment, set $0.00 free shipping, require shipping address. Copy the `buy.stripe.com/...` URL.
+2. In `products.html`, copy the `TO ADD A REAL PRODUCT` comment block, fill in name/description/price/Stripe URL, paste it inside `.products-grid`.
+3. Delete the placeholder card once you have at least one real product.
+4. Commit and push (same push procedure).
 
 ## Out of scope (deferred)
 
 - Custom domain (e.g. `morleysolutions.com`) — would need domain purchase + `CNAME` file + DNS records
 - Search engine submission to Google Search Console
-- Analytics, contact form, services pages
+- Analytics, contact form
+- Shopping cart (multi-product orders)
+- Customer login / approval gating
