@@ -33,22 +33,29 @@
     <p class="products-header__subtitle">Browse our catalogue and place an order directly through our secure checkout.</p>
   </div>
 
+  <div class="filter-tabs" role="group" aria-label="Filter by category">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="product">Products</button>
+    <button class="filter-tab" data-filter="service">Services</button>
+  </div>
+
   <div class="products-grid">
 
-    <div class="product-card">
-      <h2 class="product-card__name">Can Liner 43x48 — 45 Gallon Clear</h2>
-      <p class="product-card__desc">Coreless roll, star seal, 10×10 pack. Clear 45-gallon can liners. 100 liners per case. SKU: OP-LCR4348RTC.</p>
+    <div class="product-card" data-category="product">
+      <h2 class="product-card__name">OP-LCR4348RTC</h2>
+      <p class="product-card__desc">Can Liner 43×48, coreless roll, star seal, 10×10 pack. Clear 45-gallon liners, 100 per case.</p>
       <p class="product-card__price">$26.15 / case</p>
       <a class="btn-order" href="https://buy.stripe.com/00wfZa2bMeyc1pO2bwbV600" target="_blank" rel="noopener">Order Now</a>
     </div>
 
     <!--
-      TO ADD A REAL PRODUCT — copy this block and fill in your details:
+      TO ADD A PRODUCT OR SERVICE — copy this block and fill in your details:
+      Set data-category="product" or data-category="service" on the card div.
 
-      <div class="product-card">
-        <h2 class="product-card__name">Your Product Name</h2>
-        <p class="product-card__desc">2-3 sentence description of the product.</p>
-        <p class="product-card__price">$XX.XX per unit</p>
+      <div class="product-card" data-category="product">
+        <h2 class="product-card__name">SKU-OR-CODE-HERE</h2>
+        <p class="product-card__desc">Description here. No SKU needed — it is in the name above.</p>
+        <p class="product-card__price">$XX.XX / unit</p>
         <a class="btn-order" href="https://buy.stripe.com/YOUR_LINK_HERE" target="_blank" rel="noopener">Order Now</a>
       </div>
     -->
@@ -91,6 +98,29 @@
 
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('.filter-tab');
+      var cards = document.querySelectorAll('.product-card');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var filter = tab.getAttribute('data-filter');
+
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+
+          cards.forEach(function (card) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
       });
     })();
   </script>
