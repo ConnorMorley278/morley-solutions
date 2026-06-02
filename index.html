@@ -64,11 +64,13 @@
       function open() {
         document.body.classList.add('nav-open');
         toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close navigation');
       }
 
       function close() {
         document.body.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
       }
 
       toggle.addEventListener('click', function () {
