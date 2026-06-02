@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- Nav overlay -->
+  <!-- Nav overlay (closes drawer on outside click) -->
   <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
   <!-- Nav drawer -->
@@ -27,7 +27,8 @@
     <img class="site-header__logo" src="assets/logo.svg" alt="Morley Solutions LLC">
   </header>
 
-  <div class="products-header">
+  <main>
+    <div class="products-header">
     <h1>Products</h1>
     <p class="products-header__subtitle">Browse our catalogue and place an order directly through our secure checkout.</p>
   </div>
@@ -39,7 +40,7 @@
       <h2 class="product-card__name">Product Name</h2>
       <p class="product-card__desc">Product description goes here. Update this card with your real product details and Stripe Payment Link.</p>
       <p class="product-card__price">$0.00 per unit</p>
-      <a class="btn-order btn-order--disabled" href="#" aria-disabled="true">Order Now</a>
+      <a class="btn-order btn-order--disabled" href="#" aria-disabled="true" tabindex="-1">Order Now</a>
     </div>
     <!-- END PLACEHOLDER -->
 
@@ -55,6 +56,7 @@
     -->
 
   </div>
+  </main>
 
   <footer class="site-footer">
     <p class="site-footer__line">
@@ -70,7 +72,6 @@
     (function () {
       var toggle = document.getElementById('navToggle');
       var overlay = document.getElementById('navOverlay');
-      var drawer = document.getElementById('navDrawer');
 
       function open() {
         document.body.classList.add('nav-open');
